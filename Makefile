@@ -1,6 +1,6 @@
 include $(GOROOT)/src/Make.inc
 
-TARG=fork
+TARG=github.com/davecheney/fork
 GOFILES=\
 	fork.go \
 

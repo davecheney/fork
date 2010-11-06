@@ -15,9 +15,9 @@ func envToEnvv(env map[string]string) []string {
 	return envv
 }
 
-// fork and exec
-func Exec(s string, args []string, env map[string]string) (*os.Waitmsg, os.Error) {
-	cmd, err := exec.Run(s, args, envToEnvv(env), ".", exec.PassThrough, exec.PassThrough, exec.PassThrough)
+// Execute command returing an *os.Waitmsg
+func Exec(command string, args []string, env map[string]string) (*os.Waitmsg, os.Error) {
+	cmd, err := exec.Run(command, args, envToEnvv(env), ".", exec.PassThrough, exec.PassThrough, exec.PassThrough)
 	if err != nil {
 		return nil, err
 	}
